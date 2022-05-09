@@ -1,5 +1,14 @@
-import calc from './calc.js';
+import { createApp } from 'vue';
 
-let sum = calc.add(2,4);
-console.log(sum);
-calc.hello();
+createApp({
+    created(){
+        setTimeout(()=>{
+            this.message = 'I changed!';
+        }, 5000);
+    },
+    data() {
+        return {
+            message: 'Hello Vue!'
+        }
+    }
+}).mount('#app');

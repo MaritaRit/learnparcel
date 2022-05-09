@@ -16,6 +16,10 @@
     "surge": "^0.23.1"
   },
   "dependencies": {
-    "bulma": "^0.9.4"
+    "bulma": "^0.9.4",
+    "vue": "^3.2.33"
+  },
+  "alias": {
+    "vue": "vue/dist/vue.esm-bundler.js"
   }
 }
