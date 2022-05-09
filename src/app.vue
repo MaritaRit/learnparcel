@@ -1,46 +1,29 @@
 <template>
     <div class="container">
-        <div class="field has-addons">
-            <div class="control">
-                <input class="input" v-model="message" @keydown.enter="addItem">
-            </div>
-            <div class="control">
-                <button class="button is-primary" v-on:click="addItem">
-                    Add Item
-                </button>
-            </div>
-        </div>
-        <div class="content">
-            <ul>
-                <li v-for="(item,index) in items" v-bind:key="index">
-                    {{item}}
-                    <button class="button is-primary is-small" @click="removeItem(index)">Done</button>
-                    </li>
-            </ul>
-        </div>
-    </div>
+        <button class="button" @click="modalActive=true">Ava pilt</button>
+        <button class="button" @click="modalActive2=true">Ava teine pilt</button>
+       <modal :active="modalActive" 
+       @close="modalActive=false" 
+       img="https://placekitten.com/1280/720"></modal>
+          <modal :active="modalActive2" 
+       @close="modalActive2=false" 
+       img="https://placebear.com/1280/720"></modal>
+
+    </div>  
 </template>
 
 <script>
+import Modal from "./Modal.vue";
 export default {
+  components: { Modal },
     data() {
         return {
-            message: '',
-            items: ['piim', 'sai', 'leib']
-        }
-    },
-    methods: {
-        addItem(){
-            if(this.message.trim() != ''){
-                this.items.push(this.message);
-            }
-            this.message = '';
-        },
-        removeItem(index){
-            this.items.splice(index, 1);
+           modalActive: false,
+           modalActive2: false
         }
     }
 }
+  
 </script>
 
 <style>
