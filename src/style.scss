@@ -1,5 +1,4 @@
-$bgcolor: coral;
+$body-background-color: lighten(coral, 30);
+$primary: lighten(red, 30);
 
-body {
-    background-color: lighten($bgcolor, 20);
-}
+@import "~bulma";

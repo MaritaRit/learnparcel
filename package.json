@@ -14,5 +14,8 @@
     "@parcel/transformer-sass": "^2.5.0",
     "parcel": "^2.5.0",
     "surge": "^0.23.1"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
   }
 }
