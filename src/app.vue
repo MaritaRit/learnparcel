@@ -1,25 +1,21 @@
 <template>
     <div class="container">
-        <button class="button" @click="modalActive=true">Ava pilt</button>
-        <button class="button" @click="modalActive2=true">Ava teine pilt</button>
-       <modal :active="modalActive" 
-       @close="modalActive=false" 
-       img="https://placekitten.com/1280/720"></modal>
-          <modal :active="modalActive2" 
-       @close="modalActive2=false" 
-       img="https://placebear.com/1280/720"></modal>
-
+        <h1 class="is-size-1">{{text}}</h1>
     </div>  
 </template>
 
 <script>
-import Modal from "./Modal.vue";
+import axios from 'axios';
 export default {
-  components: { Modal },
+    created(){
+        axios.get('http://dog-api.kinduff.com/facts').then(res => {
+            console.log(res);
+            this.text = res.data.text
+    });
+    },
     data() {
         return {
-           modalActive: false,
-           modalActive2: false
+          text:''
         }
     }
 }
