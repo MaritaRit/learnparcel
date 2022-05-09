@@ -14,7 +14,7 @@
             <ul>
                 <li v-for="(item,index) in items" v-bind:key="index">
                     {{item}}
-                    <button class="button is-primary" @click="removeItem(index)">Done</button>
+                    <button class="button is-primary is-small" @click="removeItem(index)">Done</button>
                     </li>
             </ul>
         </div>
